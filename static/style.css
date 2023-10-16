@@ -64,7 +64,25 @@ header {
     justify-content: center;
     align-items: center;
   }
- 
+  form{
+    background-color:#3C91E6;
+    padding:10px;
+    width:200px;
+    height: 400px;
+    color:rgb(222, 220, 220);
+}
+.userdata{
+  display:grid;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+
+ gap:5px;
+  max-width:400px;
+  margin:auto;
+  margin-top:30px;
+  margin-bottom: 20px;
+  
+}
   .button{
     background-color:#0f64dd;
     
@@ -81,4 +99,110 @@ header {
     justify-content: center;
    padding-top: 10px;
    padding-bottom: 10px;
+}
+
+
+.table thead{
+	
+	background-color: #e2f1ff;
+	height: 50px;
+}
+ .table-data {
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 24px;
+	margin-top: 24px;
+	width: 100%;
+	color: var(--dark);
+}
+ .table-data > div {
+	border-radius: 20px;
+	
+	padding: 24px;
+	overflow-x: auto;
+}
+ .table-data .head {
+	display: flex;
+	align-items: center;
+  
+	border: #3C91E6;
+	grid-gap: 16px;
+	margin-bottom: 24px;
+}
+ .table-data .head h3 {
+	margin-right: auto;
+	font-size: 24px;
+	font-weight: 600;
+}
+ .table-data .head .bx {
+	cursor: pointer;
+}
+
+ .table-data .order {
+	flex-grow: 1;
+	flex-basis: 500px;
+}
+ .table-data .order table {
+	width: 100%;
+	border-collapse: collapse;
+}
+ .table-data .order table th {
+	padding-bottom: 10px;
+  padding-top: 10px;
+  
+	font-size: 13px;
+	
+  color: #e2f1ff;
+  background: #3C91E6;
+	border-bottom: 1px solid var(--grey);
+}
+ .table-data .order table td {
+	padding: 10px 0;
+}
+.table-data .order table tr td:first-child {
+	display: flex;
+	align-items: center;
+	
+}
+
+ .table-data .order table tbody tr:hover {
+	background: var(--grey);
+}
+ .table-data .order table tr td .status {
+	font-size: 10px;
+
+	color: var(--light);
+	border-radius: 20px;
+	font-weight: 700;
+}
+.table-data .order table tr td .status.completed {
+	background: var(--blue);
+}
+ .table-data .order table tr td .status.process {
+	background: var(--yellow);
+}
+ .table-data .order table tr td .status.pending {
+	background: var(--orange);
+}
+
+
+ .table-data .todo {
+	flex-grow: 1;
+	
+}
+.table-data .todo .todo-list {
+	width: 100%;
+}
+
+.table-data .todo .todo-list li .bx {
+	cursor: pointer;
+}
+ .table-data .todo .todo-list li.completed {
+	border-left: 10px solid var(--blue);
+}
+ .table-data .todo .todo-list li.not-completed {
+	border-left: 10px solid var(--orange);
+}
+ .table-data .todo .todo-list li:last-child {
+	margin-bottom: 0;
 }
