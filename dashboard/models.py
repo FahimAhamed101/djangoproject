@@ -23,7 +23,7 @@ class User(AbstractUser):
     role = models.PositiveSmallIntegerField(choices=ROLES, blank=True, null=True)
 
 
-class Userinfo:
+class Userinfo(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     first_name    = models.CharField(max_length=200, unique=True)
     last_name    = models.CharField(max_length=200, unique=True)
@@ -45,7 +45,7 @@ class Userinfo:
     created_date    = models.DateTimeField(auto_now_add=True)
     modified_date   = models.DateTimeField(auto_now=True)
     
-class Transaction:
+class Transaction(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     Bin  = models.CharField(max_length=100)
     Lastfour  = models.CharField(max_length=100)
