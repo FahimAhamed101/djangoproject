@@ -1,0 +1,85 @@
+
+header {
+    width: 100%;
+    
+    margin-inline: auto;
+    height: 50px;
+    z-index: 30;
+    display: flex;
+ 
+    inset: 0;
+    background-color: #207cca;
+    
+    justify-content: space-between;
+    align-items: center;
+    
+    transition: all 0.2s ease 0s;
+    
+  }
+  
+  header.scrolled {
+    background-color: #00000052;
+    backdrop-filter: blur(50px);
+    box-shadow: 0px 0px 15px #000000b6;
+    top: 15px;
+    border-radius: 20px;
+  }
+  
+  header .logo {
+    color: #fff;
+    font-weight: 900;
+    font-size: 2.35rem;
+  }
+  
+  header nav {
+    width: max-content;
+    font-size: 14px;
+    font-weight: 300;
+    display: flex;
+    list-style: none;
+    gap: 45px;
+    opacity: 0.9;
+  }
+  
+  header nav li a {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 15px;
+    transition: all 0.3s ease 0s;
+  }
+  
+  header nav li a.active {
+    background: #b61dfd6f;
+    border: 1px solid #ffffff35;
+    backdrop-filter: blur(55px);
+    color: #ffffff;
+    border-radius: 20px;
+  }
+.container{
+  display:flex;
+  width: 100%;
+  justify-content: center;
+}
+.sidebar {
+    
+  position: fixed;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100%;
+	align
+	
+	z-index: 2000;
+	font-family: var(--lato);
+	transition: .3s ease;
+	overflow-x: hidden;
+	scrollbar-width: none;
+  }
+.contentmain {
+  position: relative;
+	width: calc(100% - 280px);
+	left: 280px;
+	transition: .3s ease;
+  background-color: red;
+  }
