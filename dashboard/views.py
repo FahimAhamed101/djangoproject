@@ -2,13 +2,35 @@ from django.shortcuts import render, redirect
 from .forms import SignUpForm, LoginForm
 from django.contrib.auth import authenticate, login
 # Create your views here.
-
+from .models import User,Userinfo,Transaction
+def _usertrans_id(request):
+    usertrans = request.session.session_key
+    if not usertrans:
+        usertrans = request.session.create()
+    return usertrans
 
 def index(request):
     return render(request, 'index.html')
 
 def data_view(request):
-    return render(request, 'data.html')
+    try:
+        
+        if request.user.is_authenticated:
+            transaction = Transaction.objects.filter(user=request.user)
+        else:
+            userinfo = Userinfo.objects.get(usertrans_id=_usertrans_id(request))
+            transaction = Transaction.objects.filter(userinfo=userinfo)
+        
+        
+    except ObjectDoesNotExist:
+        pass #just ignore
+    
+    context = {
+        
+        'transaction': transaction,
+        
+    }
+    return render(request, 'data.html',context)
 def register(request):
     msg = None
     if request.method == 'POST':
