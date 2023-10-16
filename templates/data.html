@@ -9,7 +9,15 @@
   <div> <button class=" button"> Search</button>
   </div>
  
+
+ 
 </section>
+ <dialog id="dialogModal" class="modal">
+    <h1>My Modal</h1>
+    <p>Modal content...</p>
+    <p>Click the below button or press `ESC` key to close this.</p>
+    <button id="closeModalBtn" class="modal-close-btn">Close the modal</button>
+  </dialog>
 
   <section class="container" >
 
@@ -18,14 +26,77 @@
   <h1>User information</h1>
   <div class="userdata">
     <form>
-      <h2>Send us a Message</h2>
-      <label forname="fname">Name</label><br>
+      <table>
       
-      <label forname="Email">E-mail</label><br>
-     
-      <label forname="sub">Subject</label><br>
-      
-      <label forname="msg">Message</label><br>
+          <tr>
+              <td><i class="fa-solid fa-location-dot"></i></td>
+              <td><span>Username:</span></td>
+          </tr>
+          <tr>
+              <td><i class="fa-solid fa-phone"></i></td>
+              <td><span>Email:</span> </td>
+          </tr>
+          <tr>
+              <td><i class="fa-solid fa-paper-plane"></i></td>
+              <td> <span>FirstName</span> </td>
+          </tr>
+          <tr>
+              <td><i class="fa-solid fa-earth-asia"></i></td>
+              <td><span>PhoneNumber</span></td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-earth-asia"></i></td>
+            <td><span>BusinessPhoneNumber</span></td>
+        </tr>
+        <tr>
+          <td><i class="fa-solid fa-earth-asia"></i></td>
+          <td><span>BusinessEmail</span></td>
+      </tr>
+      <tr>
+        <td><i class="fa-solid fa-earth-asia"></i></td>
+        <td><span>TotalTrans</span></td>
+    </tr>
+    <tr>
+      <td><i class="fa-solid fa-earth-asia"></i></td>
+      <td><span>TotalAmmount</span></td>
+  </tr>
+  <tr>
+    <td><i class="fa-solid fa-earth-asia"></i></td>
+    <td><span>TotalDispute</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>TotalDisputeAmmount</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>ChargeBackcountRate</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>ChargeBackAmmountRate</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>AcceptedTrans</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>DeclinedTrans</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>Accepted Rate</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>Limit</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>Volume</span></td>
+</tr>
+      </table>
      
   
   </form>
@@ -33,22 +104,76 @@
       
       <div class="divide">
           <table>
+            {% for userinfo in userinfo %}
               <tr>
                   <td><i class="fa-solid fa-location-dot"></i></td>
-                  <td><span>Address:</span> 198 West 21th Street, Suite 721<br> New York NY 10016</td>
+                  <td><span>{{userinfo.username}}</span> </td>
               </tr>
               <tr>
                   <td><i class="fa-solid fa-phone"></i></td>
-                  <td><span>Phone:</span> + 1235 2355 98</td>
+                  <td><span>{{userinfo.email}}</span> </td>
               </tr>
               <tr>
                   <td><i class="fa-solid fa-paper-plane"></i></td>
-                  <td> <span>Email:</span>  info@yoursite.com</td>
+                  <td> <span>{{userinfo.first_name}}</span>  </td>
               </tr>
               <tr>
                   <td><i class="fa-solid fa-earth-asia"></i></td>
-                  <td><span>Website:</span>  yoursite.com</td>
+                  <td><span>{{userinfo.phonenumber}}</span></td>
               </tr>
+              <tr>
+                <td><i class="fa-solid fa-earth-asia"></i></td>
+                <td><span>{{userinfo.Businessphonenumber}}</span></td>
+            </tr>
+            <tr>
+              <td><i class="fa-solid fa-earth-asia"></i></td>
+              <td><span>{{userinfo.Businessemail}}</span></td>
+          </tr>
+          <tr>
+            <td><i class="fa-solid fa-earth-asia"></i></td>
+            <td><span>{{userinfo.phonenumber}}</span></td>
+        </tr>
+        <tr>
+          <td><i class="fa-solid fa-earth-asia"></i></td>
+          <td><span>{{userinfo.phonenumber}}</span></td>
+      </tr>
+      <tr>
+        <td><i class="fa-solid fa-earth-asia"></i></td>
+        <td><span>{{userinfo.phonenumber}}</span></td>
+    </tr>
+    <tr>
+      <td><i class="fa-solid fa-earth-asia"></i></td>
+      <td><span>{{userinfo.phonenumber}}</span></td>
+  </tr>
+  <tr>
+    <td><i class="fa-solid fa-earth-asia"></i></td>
+    <td><span>{{userinfo.phonenumber}}</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>{{userinfo.phonenumber}}</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>{{userinfo.phonenumber}}</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>{{userinfo.phonenumber}}</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>{{userinfo.phonenumber}}</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>{{userinfo.phonenumber}}</span></td>
+</tr>
+<tr>
+  <td><i class="fa-solid fa-earth-asia"></i></td>
+  <td><span>{{userinfo.phonenumber}}</span></td>
+</tr>
+              {% endfor %}
           </table>
       </div>
   </div>
@@ -72,6 +197,8 @@
             </div>
             <table width="100%">
               <thead>
+
+
                 <tr>
                   <th>BIN</th>
                   <th><span class="las la-sort"></span> Last 4</th>
@@ -83,260 +210,47 @@
                   <th><span class="las la-sort"></span>Created at</th>
                   <th><span class="las la-sort"></span>Actions</th>
                 </tr>
+
+                
               </thead>
-              <tbody>
+              <tbody>{% for transaction in transaction %}
                 <tr>
-                  <td>#5033</td>
+                  <td>{{transaction.Bin}}</td>
                   <td>
                     <div class="client">
-                       <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
+                     
                       <div class="client-info">
-                        <h4>Andrew Bruno</h4>
-                        <small>bruno@crossover.org</small>
+                  
+                        <small>{{transaction.Lastfour}}</small>
                       </div>
                     </div>
                   </td>
                   <td>
-                    $3171
+                    {{transaction.ammount }} 
                   </td>
                   <td>
-                    19 April, 2022
+                    {{transaction.payout }}
                   </td>
                   <td>
-                    -$205
+                    {{transaction.code }}
                   </td>
                   <td>
-                    <div class="actions">
-                      <span class="lab la-telegram-plane"></span>
-                      <span class="las la-eye"></span>
-                      <span class="las la-ellipsis-v"></span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#5033</td>
-                  <td>
-                    <div class="client">
-                       <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                      <div class="client-info">
-                        <h4>Exty Bruno</h4>
-                        <small>exty@crossover.org</small>
-                      </div>
-                    </div>
+                    {{transaction.accepted }}
                   </td>
                   <td>
-                    $3171
+                    {{transaction.InternalTransactionid }}
                   </td>
                   <td>
-                    19 April, 2022
-                  </td>
-                  <td>
-                    -$205
+                    {{transaction.created_at }}
                   </td>
                   <td>
                     <div class="actions">
-                      <span class="lab la-telegram-plane"></span>
-                      <span class="las la-eye"></span>
-                      <span class="las la-ellipsis-v"></span>
+                      <button id="openModalBtn">Open the modal</button>
                     </div>
                   </td>
                 </tr>
-                <tr>
-                  <td>#5033</td>
-                  <td>
-                    <div class="client">
-                       <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                      <div class="client-info">
-                        <h4>Exty Bruno</h4>
-                        <small>exty@crossover.org</small>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    $2171
-                  </td>
-                  <td>
-                    19 April, 2022
-                  </td>
-                  <td>
-                    <span class="paid">Paid</span>
-                  </td>
-                  <td>
-                    <div class="actions">
-                      <span class="lab la-telegram-plane"></span>
-                      <span class="las la-eye"></span>
-                      <span class="las la-ellipsis-v"></span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#5033</td>
-                  <td>
-                    <div class="client">
-                       <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
-                      <div class="client-info">
-                        <h4>Andrew Bruno</h4>
-                        <small>bruno@crossover.org</small>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    $3171
-                  </td>
-                  <td>
-                    19 April, 2022
-                  </td>
-                  <td>
-                    -$205
-                  </td>
-                  <td>
-                    <div class="actions">
-                      <span class="lab la-telegram-plane"></span>
-                      <span class="las la-eye"></span>
-                      <span class="las la-ellipsis-v"></span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#5033</td>
-                  <td>
-                    <div class="client">
-                       <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                      <div class="client-info">
-                        <h4>Exty Bruno</h4>
-                        <small>exty@crossover.org</small>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    $3171
-                  </td>
-                  <td>
-                    19 April, 2022
-                  </td>
-                  <td>
-                    <span class="paid">Paid</span>
-                  </td>
-                  <td>
-                    <div class="actions">
-                      <span class="lab la-telegram-plane"></span>
-                      <span class="las la-eye"></span>
-                      <span class="las la-ellipsis-v"></span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#5033</td>
-                  <td>
-                    <div class="client">
-                       <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                      <div class="client-info">
-                        <h4>Exty Bruno</h4>
-                        <small>exty@crossover.org</small>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    $2171
-                  </td>
-                  <td>
-                    19 April, 2022
-                  </td>
-                  <td>
-                    <span class="paid">Paid</span>
-                  </td>
-                  <td>
-                    <div class="actions">
-                      <span class="lab la-telegram-plane"></span>
-                      <span class="las la-eye"></span>
-                      <span class="las la-ellipsis-v"></span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#5033</td>
-                  <td>
-                    <div class="client">
-                       <div class="client-img bg-img" style="background-image: url(img/3.jpeg)"></div>
-                      <div class="client-info">
-                        <h4>Andrew Bruno</h4>
-                        <small>bruno@crossover.org</small>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    $3171
-                  </td>
-                  <td>
-                    19 April, 2022
-                  </td>
-                  <td>
-                    -$205
-                  </td>
-                  <td>
-                    <div class="actions">
-                      <span class="lab la-telegram-plane"></span>
-                      <span class="las la-eye"></span>
-                      <span class="las la-ellipsis-v"></span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#5033</td>
-                  <td>
-                    <div class="client">
-                       <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                      <div class="client-info">
-                        <h4>Exty Bruno</h4>
-                        <small>exty@crossover.org</small>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    $3171
-                  </td>
-                  <td>
-                    19 April, 2022
-                  </td>
-                  <td>
-                    -$205
-                  </td>
-                  <td>
-                    <div class="actions">
-                      <span class="lab la-telegram-plane"></span>
-                      <span class="las la-eye"></span>
-                      <span class="las la-ellipsis-v"></span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>#5033</td>
-                  <td>
-                    <div class="client">
-                       <div class="client-img bg-img" style="background-image: url(img/1.jpeg)"></div>
-                      <div class="client-info">
-                        <h4>Exty Bruno</h4>
-                        <small>exty@crossover.org</small>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    $2171
-                  </td>
-                  <td>
-                    19 April, 2022
-                  </td>
-                  <td>
-                    <span class="paid">Paid</span>
-                  </td>
-                  <td>
-                    <div class="actions">
-                      <span class="lab la-telegram-plane"></span>
-                      <span class="las la-eye"></span>
-                      <span class="las la-ellipsis-v"></span>
-                    </div>
-                  </td>
-                </tr>
+                {% endfor %}
+         
                 
               </tbody>
             </table>

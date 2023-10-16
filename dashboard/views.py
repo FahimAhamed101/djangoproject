@@ -17,9 +17,10 @@ def data_view(request):
         
         if request.user.is_authenticated:
             transaction = Transaction.objects.filter(user=request.user)
+            userinfo = Userinfo.objects.filter(user=request.user)
         else:
-            userinfo = Userinfo.objects.get(usertrans_id=_usertrans_id(request))
-            transaction = Transaction.objects.filter(userinfo=userinfo)
+            userinfoid = Userinfo.objects.get(usertrans_id=_usertrans_id(request))
+            transaction = Transaction.objects.filter(userinfoid=userinfoid)
         
         
     except ObjectDoesNotExist:
@@ -28,6 +29,7 @@ def data_view(request):
     context = {
         
         'transaction': transaction,
+         'userinfo': userinfo,
         
     }
     return render(request, 'data.html',context)

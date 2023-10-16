@@ -32,7 +32,8 @@ class Userinfo(models.Model):
     description     = models.TextField(max_length=500, blank=True)
     phonenumber           = models.IntegerField()
     totaltransaction           = models.IntegerField()
-    phonenumber           = models.IntegerField()
+    Businessphonenumber           = models.IntegerField()
+    Businessemail           = models.EmailField(max_length=100, unique=True)
     totalammount  = models.IntegerField()
     disputes  = models.IntegerField()
     totaldisputesammount  = models.IntegerField()
@@ -52,7 +53,7 @@ class Transaction(models.Model):
     ammount  = models.IntegerField()
     payout  = models.CharField(max_length=100)
     code  = models.IntegerField()
-    accepted  = models.IntegerField()
+    accepted  = models.BooleanField(default=False)
     InternalTransactionid  = models.CharField(max_length=100)
     created_at    = models.DateTimeField(auto_now_add=True)
     

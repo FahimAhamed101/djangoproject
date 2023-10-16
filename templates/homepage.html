@@ -21,5 +21,19 @@
   
  {% block content %}
  {% endblock %}
+ <script>
+    const myDialogModal = document.querySelector("#dialogModal");
+    const myOpenModalBtn = document.querySelector("#openModalBtn");
+    const myCloseModalBtn = document.querySelector("#closeModalBtn");
+    
+    if (myDialogModal) {
+      myOpenModalBtn &&
+        myOpenModalBtn.addEventListener("click", () => myDialogModal.showModal());
+    
+      myCloseModalBtn &&
+        myCloseModalBtn.addEventListener("click", () => myDialogModal.close());
+    }
+    
+ </script>
 </body>
 </html>
