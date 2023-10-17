@@ -1,9 +1,9 @@
 from rest_framework import serializers
+from .models import *
 
-
-class TaransactionSerializer(serializers.ModelSerializer):
+class TransactionViewSet(serializers.ModelSerializer):
     
     
     class Meta:
-        model = Product
-        fields = [ "id", "name", "description", "inventory", "price", "images", "uploaded_images"]
+        model = Transaction
+        fields = '__all__'
