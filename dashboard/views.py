@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import SignUpForm, LoginForm
 from django.contrib.auth import authenticate, login
+from .models import *
+from .seralizers import *
 # Create your views here.
 from .models import User,Userinfo,Transaction
 def _usertrans_id(request):
@@ -76,3 +78,9 @@ def dashboard(request):
     else:
         form = SignUpForm()
     return render(request,'dashboard.html', {'form': form, 'msg': msg})
+
+
+class TrabsactionViewSet(ModelViewSet):
+    queryset = Transaction.objects.all()
+    serializer_class = TrabsactionViewSet
+    
