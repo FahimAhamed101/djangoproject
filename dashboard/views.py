@@ -82,6 +82,10 @@ def dashboard(request):
 
 
 class TransactionViewSet(viewsets.ModelViewSet):
-    queryset = Transaction.objects.all()
-    serializer_class = TransactionViewSet
+    def get_queryset(self):
+        queryset = Transaction.objects.all()
+        serializer_class = TransactionViewSet
+        return queryset
+    
+    
     
