@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import SignUpForm, LoginForm
 from django.contrib.auth import authenticate, login
 from .models import *
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework import status, viewsets
 from .serializers import TransactionListSerializer
 # Create your views here.
@@ -84,8 +85,13 @@ def dashboard(request):
 class TransactionViewSet(viewsets.ModelViewSet):
     serializer_class = TransactionListSerializer
     def get_queryset(self):
-        queryset = Transaction.objects.all()
         
+        if self.action == 'list':
+            permission_classes = [IsAuthenticated]
+            queryset = Transaction.objects.filter(user=self.request.user).order_by("-created_at")
+        else:
+            permission_classes = [IsAuthenticated]
+            queryset = Transaction.objects.filter(user=self.request.user).order_by("-created_at")
         return queryset
     
     
