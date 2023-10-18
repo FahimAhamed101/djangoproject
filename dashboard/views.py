@@ -3,7 +3,7 @@ from .forms import SignUpForm, LoginForm
 from django.contrib.auth import authenticate, login
 from .models import *
 from rest_framework import status, viewsets
-from .serializers import TransactionViewSet
+from .serializers import TransactionListSerializer
 # Create your views here.
 from .models import User,Userinfo,Transaction
 def _usertrans_id(request):
@@ -82,9 +82,10 @@ def dashboard(request):
 
 
 class TransactionViewSet(viewsets.ModelViewSet):
+    serializer_class = TransactionListSerializer
     def get_queryset(self):
         queryset = Transaction.objects.all()
-        serializer_class = TransactionViewSet
+        
         return queryset
     
     
