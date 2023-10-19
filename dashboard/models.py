@@ -31,9 +31,9 @@ class Userinfo(models.Model):
     email           = models.EmailField(max_length=100, unique=True)
     description     = models.TextField(max_length=500, blank=True)
     phonenumber           = models.IntegerField()
-    totaltransaction           = models.IntegerField()
-    Businessphonenumber           = models.IntegerField()
-    Businessemail           = models.EmailField(max_length=100, unique=True)
+    totaltransaction           = models.IntegerField(null=True)
+    Businessphonenumber           = models.IntegerField(null=True)
+    Businessemail           = models.EmailField(max_length=100, unique=True,null=True)
     totalammount  = models.IntegerField()
     disputes  = models.IntegerField()
     totaldisputesammount  = models.IntegerField()
@@ -59,7 +59,7 @@ class Transaction(models.Model):
     
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(Account, on_delete=models.CASCADE)
+    user = models.OneToOneField(Userinfo, on_delete=models.CASCADE, null=True)
     address_line_1 = models.CharField(blank=True, max_length=100)
     address_line_2 = models.CharField(blank=True, max_length=100)
     profile_picture = models.ImageField(blank=True, upload_to='userprofile')
