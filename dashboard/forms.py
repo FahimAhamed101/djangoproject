@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import User,Userinfo,UserProfile
+from .models import User,UserProfile
 
 class LoginForm(forms.Form):
     username = forms.CharField(
@@ -56,7 +56,7 @@ class SignUpForm(UserCreationForm):
         
 class UserForm(forms.ModelForm):
     class Meta:
-        model = Userinfo
+        model = User
         fields = ('first_name', 'last_name', 'phonenumber')
 
     def __init__(self, *args, **kwargs):

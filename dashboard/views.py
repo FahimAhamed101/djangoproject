@@ -8,7 +8,7 @@ from rest_framework import status, viewsets
 from .serializers import TransactionListSerializer
 from django.contrib.auth.decorators import login_required
 # Create your views here.
-from .models import User,Userinfo,Transaction
+from .models import User,Transaction
 def _usertrans_id(request):
     usertrans = request.session.session_key
     if not usertrans:
@@ -23,10 +23,10 @@ def data_view(request):
         
         if request.user.is_authenticated:
             transaction = Transaction.objects.filter(user=request.user)
-            userinfo = Userinfo.objects.filter(user=request.user)
+            user= User.objects.filter(user=request.user)
         else:
-            userinfoid = Userinfo.objects.get(usertrans_id=_usertrans_id(request))
-            transaction = Transaction.objects.filter(userinfoid=userinfoid)
+            userid = User.objects.get(usertrans_id=_usertrans_id(request))
+            transaction = Transaction.objects.filter(user=userid)
         
         
     except ObjectDoesNotExist:
@@ -40,11 +40,17 @@ def data_view(request):
     }
     return render(request, 'data.html',context)
 def register(request):
+    
     msg = None
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
+            
             user = form.save()
+            profile = UserProfile()
+            profile.user_id = user.id
+            profile.profile_picture = 'default/default-user.png'
+            profile.save()
             msg = 'user created'
             return redirect('login')
         else:
