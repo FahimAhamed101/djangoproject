@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboard',
      'rest_framework',
+     'userauths',
+     'account',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +70,7 @@ TEMPLATES = [
         },
     },
 ]
-AUTH_USER_MODEL = 'dashboard.User'
+AUTH_USER_MODEL = 'userauths.User'
 WSGI_APPLICATION = 'djangoapp.wsgi.application'
 
 
