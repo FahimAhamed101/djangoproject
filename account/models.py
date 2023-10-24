@@ -50,24 +50,7 @@ class Account(models.Model):
     kyc_confirmed = models.BooleanField(default=False)
     recommended_by = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, null=True, related_name="recommended_by")
     review = models.CharField(max_length=100, null=True, blank=True, default="Review")
-    admin = 0
-    client = 1
-    Employee_Fraud = 2
-    Employee_full = 3
-    Employee_Support = 4
-    Acountant = 5
-    Professor = 6
-    ROLES = (
-        (admin, 'admin'),
-        (client, 'client'),
-        (Employee_Fraud, 'Employee_Fraud'),
-        (Employee_full, 'Employee_full'),
-        (Employee_Support, 'Employee_Support'),
-        (Acountant, 'Acountant'),
-        (Professor, 'Professor'),
-    )
-    role = models.PositiveSmallIntegerField(choices=ROLES, blank=True, null=True)
-    first_name    = models.CharField(max_length=200, )
+    
     last_name    = models.CharField(max_length=200,)
     username    = models.CharField(max_length=200, unique=True)
     email           = models.EmailField(max_length=100, unique=True)

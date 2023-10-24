@@ -43,16 +43,16 @@ def data_view(request):
 def dashboard(request):
     msg = None
     if request.method == 'POST':
-        form = SignUpForm(request.POST)
+        #form = SignUpForm(request.POST)
         if form.is_valid():
             user = form.save()
             msg = 'user created'
             return redirect('login')
         else:
             msg = 'form is not valid'
-    else:
-        form = SignUpForm()
-    return render(request,'dashboard.html', {'form': form, 'msg': msg})
+    
+        #form = SignUpForm()
+    return render(request,'dashboard.html',)
 
 
 
